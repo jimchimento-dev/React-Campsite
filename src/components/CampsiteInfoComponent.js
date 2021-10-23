@@ -27,6 +27,7 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
+        this.toggleModal();
         console.log('Current state is ' + JSON.stringify(values));
         alert('Current state is ' + JSON.stringify(values));
     }
@@ -47,8 +48,8 @@ class CommentForm extends Component {
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
-                                </Control.select>.
-                        </div>
+                                </Control.select>
+                            </div>
                             <div className="form-group">
                                 <Label htmlFor="name">Your Name</Label>
                                 <Control.text model=".author" id="author" name="author" placeholder="Your Name" className="form-control"
