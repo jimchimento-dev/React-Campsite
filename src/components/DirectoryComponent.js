@@ -3,6 +3,7 @@ import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } 
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform } from 'react-animation-components';
 
 
 function RenderDirectoryItem({ campsite }) {
@@ -61,9 +62,15 @@ function Directory(props) {
                     <hr />
                 </div>
             </div>
-            <div className="row">
-                {directory}
-            </div>
+            <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.2) translateX(-80%)'
+                }}>
+                <div className="row">
+                    {directory}
+                </div>
+            </FadeTransform>
         </div>
     );
 }
